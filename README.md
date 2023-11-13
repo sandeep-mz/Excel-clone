@@ -1,6 +1,6 @@
 # Excel Clone Project
 
-![Screenshot 2023-10-02 190714](https://github.com/sandeep-mz/Excel-clone/assets/108665091/a612fb21-70d4-4392-8ff7-77d7177fef66)
+![Screenshot (134)](https://github.com/sandeep-mz/Excel-clone/assets/108665091/46ab8b2c-53a9-490d-83bb-a6b7edf373dd)
 
 
 🚀 **Welcome to the Excel Clone Project!** 🚀
