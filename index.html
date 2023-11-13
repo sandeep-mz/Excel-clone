@@ -1,156 +1,362 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" type="image/x-icon" href="./Assest/logo.ico">
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Google Sheets</title>
+    <link rel="stylesheet" href="./Assest/style.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
-    <link rel="stylesheet" href="./Assest/style.css">
-    <title>Excel</title>
-</head>
+    <link rel="shortcut icon"  href="./Assest/logo.ico" />
+  </head>
+  <body>
+    <main
+      style="
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
+      "
+      id="main"
+    >
+      <header>
+        <div class="options">
+          <div class="indexOption" style="background-color: #f9fbfd">
+            <ul style="display: flex; list-style-type: none">
+              <li>
+                <ul
+                  style="
+                    display: flex;
+                    list-style-type: none;
+                    padding-top: 15px;
+                    gap: 15px;
+                  "
+                  id="indexOptionList"
+                >
+                  <li>File</li>
+                  <li id="Home" style="background-color: white;">Home</li>
+                  <li>Insert</li>
+                  <li>Layout</li>
+                  <li>Help</li>
+                  <li > <a href="index.html" style="text-decoration: none; color: #edf2fa;">Reset</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
 
-<body>
-    <div class="container">
 
-        <div class="page-actions-cont">
-            <div class="page-action">File</div>
-            <div class="page-action selected-page-action">Home</div>
-            <div class="page-action">Insert</div>
-            <div class="page-action">Layout</div>
-            <div class="page-action">Help</div>
-        </div>
-        <div class="cellprop-actions-cont">
-            <span class="material-icons copy icon-copy" >content_copy</span>
-            <span class="material-icons cut icon-cut">content_cut</span>
-            <span class="material-icons paste icon-paste" >content_paste</span>
-            <!-- for the font ----------------- -->
-            <select class="font-family-prop">
-                <option value="Times New Roman">Times New Roman</option>
-                <option value="Arial">Arial</option>
-                <option value="Caveat">Caveat</option>
-                <option value="Confortaa">Confortaa</option>
-                <option value="Comic Sans MS">Comic Sans MS</option>
-                <option value="Courier New">Courier New</option>
-                <option value="EB Garamond">EB Garamond</option>
-                <option value="Georgia">Georgia</option>
-                <option value="Impact">Impact</option>
-                <option value="Josefin Sans">Josefin Sans</option>
-                <option value="Lato">Lato</option>
-                <option value="Lexend">Lexend</option>
-                <option value="Lobster">Lobster</option>
-                <option value="Lora">Lora</option>
-                <option value="Trebuchet MS">Trebuchet MS</option>
-                <option value="Ubuntu">Ubuntu</option>
-                <option value="Verdana">Verdana</option>
-            </select>
-            <!-- -for the size--------------------------- -->
-            <select class="font-size-prop">
-                <option value="12px">12</option>
-                <option value="14px">14</option>
-                <option value="16px">16</option>
-                <option value="18px">18</option>
-                <option value="20px">20</option>
-                <option value="20px">22</option>
-                <option value="24px">24</option>
-                <option value="20px">26</option>
-                <option value="20px">28</option>
-                <option value="30px">30</option>
-                <option value="30px">32</option>
-                <option value="30px">34</option>
-                <option value="36px">36</option>
-                <option value="30px">38</option>
-                <option value="48px">40</option>
-                <option value="48px">42</option>
-                <option value="48px">44</option>
-                <option value="48px">46</option>
-                <option value="48px">48</option>
-                <option value="60px">50</option>
-                <option value="60px">52</option>
-                <option value="60px">54</option>
-                <option value="60px">56</option>
-                <option value="60px">58</option>
-                <option value="60px">60</option>
-                <option value="60px">62</option>
-                <option value="60px">64</option>
-                <option value="60px">66</option>
-                <option value="60px">68</option>
-                <option value="72px">70</option>
-                <option value="72px">72</option>
-                <option value="72px">74</option>
-                <option value="72px">76</option>
-                <option value="72px">78</option>
-                <option value="84px">80</option>
-                <option value="84px">82</option>
-                <option value="84px">84</option>
-                <option value="84px">86</option>
-                <option value="84px">88</option>
-                <option value="96px">90</option>
-                <option value="96px">92</option>
-                <option value="96px">94</option>
-                <option value="96px">96</option>
-            </select>
-            <!-- --for the tooling ------------------------ -->
-            <span class="material-icons bold">format_bold</span>
-            <span class="material-icons italic">format_italic</span>
-            <span class="material-icons underline">format_underlined</span>
-            <span class="left material-icons alignment">format_align_left</span>
-            <span class="center material-icons alignment">format_align_center</span>
-            <span class="right material-icons alignment">format_align_right</span>
-            <div class="color-prop">
-                <span class="material-icons">format_color_text</span>
-                <input type="color" class="font-color-prop">
+          <div class="menuOption" style="background-color: #f9fbfd">
+            <ul id="menuOptionList">
+
+              <li>
+                <div id="cut" class="material-icons" onclick="onClickCut(this)">
+                  content_cut
+                </div>
+                <div
+                  class="hoverSuggetion"
+                  style="padding: 5px 10px; left: -5px"
+                >
+                  Cut
+                </div>
+              </li>
+              <li>
+                <div
+                  id="copy"
+                  class="material-icons"
+                  onclick="onClickCopy(this)"
+                >
+                  content_copy
+                </div>
+                <div
+                  class="hoverSuggetion"
+                  style="padding: 5px 10px; left: -5px"
+                >
+                  Copy
+                </div>
+              </li>
+              
+              <li>
+                <div
+                  id="paste"
+                  class="material-icons"
+                  onclick="onClickPaste(this)"
+                >
+                  content_paste
+                </div>
+                <div
+                  class="hoverSuggetion"
+                  style="padding: 5px 10px; left: -15px"
+                >
+                  Paste
+                </div>
+              </li>
+              <li>
+                <div class="vertical-line" style="padding: 0"></div>
+              </li>
+              <li style="background-color: #edf2fa">
+                <div
+                  class="material-icons"
+                  style="background-color: #edf2fa; display: flex"
+                >
+                  <select id="font-selector" style="width: 100px">
+                    <option value='"open Sans"'>Open Sans</option>
+                    <option value="Arial, sans-serif">Arial</option>
+                    <option value="Verdana, sans-serif">Verdana</option>
+                    <option value="Georgia, serif">Georgia</option>
+                    <option value='"Times New Roman", serif'>Times New Roman</option>
+                    <option value='"Courier New", monospace'> Courier New</option>
+                    <option value="Tahoma, sans-serif">Tahoma</option>
+                    <option value="Palatino Linotype, Palatino, serif">Palatino</option>
+                    <option value="Helvetica Neue, Helvetica, Arial, sans-serif">Helvetica</option>
+                    <option value="Impact, Charcoal, sans-serif">Impact</option>
+                    <option value="Lucida Console, Monaco, monospace">Monaco</option>
+                    <option value="Garamond, Baskerville, Georgia, Times New Roman, Times, serif">Garamond</option>
+                  </select>
+                </div>
+              </li>
+              <li style="background-color: #edf2fa">
+                <div
+                  class="material-icons"
+                  style="background-color: #edf2fa; display: flex"
+                >
+                  <select id="font-size-selector" style="width: 70px">
+                    <option value="12px">12px</option>
+                    <option value="13px">13px</option>
+                    <option value="14px">14px</option>
+                    <option value="16px">16px</option>
+                    <option value="20px">20px</option>
+                    <option value="24px">24px</option>
+                    <option value="28px">28px</option>
+                    <option value="32px">32px</option>
+                    <option value="34px">34px</option>
+                    <option value="36px">36px</option>
+                    <option value="38px">38px</option>
+                    <option value="40px">40px</option>
+                    <option value="42px">42px</option>
+                  </select>
+                </div>
+              </li>
+              <li>
+                <div class="vertical-line" style="padding: 0"></div>
+              </li>
+              <li style="position: relative">
+                <div
+                  id="bold"
+                  class="material-icons"
+                  onclick="onClickBold(this)"
+                >
+                  format_bold
+                </div>
+                <div
+                  class="hoverSuggetion"
+                  style="padding: 5px 10px; left: -10px"
+                >
+                  Bold
+                </div>
+              </li>
+              <li style="position: relative">
+                <div
+                  id="italic"
+                  class="material-icons"
+                  onclick="onClickItalic(this)"
+                >
+                  format_italic
+                </div>
+                <div
+                  class="hoverSuggetion"
+                  style="padding: 5px 10px; left: -10px"
+                >
+                  Italic
+                </div>
+              </li>
+              <li style="position: relative">
+                <div
+                  id="underline"
+                  class="material-icons"
+                  onclick="onClickUnderline(this)"
+                >
+                  format_underlined
+                </div>
+                <div
+                  class="hoverSuggetion"
+                  style="padding: 5px 10px; left: -25px"
+                >
+                  Underline
+                </div>
+              </li>
+              <li style="position: relative">
+                <div
+                  id="leftAlign"
+                  class="material-icons text-align"
+                  data-value="start"
+                  onclick="onClickTextAlign(this)"
+                >
+                  format_align_left
+                </div>
+                <div
+                  class="hoverSuggetion"
+                  style="padding: 5px 10px; left: -30px"
+                >
+                  Align Left
+                </div>
+              </li>
+              <li style="position: relative">
+                <div
+                  id="centerAlign"
+                  class="material-icons text-align"
+                  data-value="center"
+                  onclick="onClickTextAlign(this)"
+                >
+                  format_align_center
+                </div>
+                <div
+                  class="hoverSuggetion"
+                  style="padding: 5px 10px; left: -30px"
+                >
+                  Align Center
+                </div>
+              </li>
+              <li style="position: relative">
+                <div
+                  id="rightAlign"
+                  class="material-icons text-align"
+                  data-value="right"
+                  onclick="onClickTextAlign(this)"
+                >
+                  format_align_right
+                </div>
+                <div
+                  class="hoverSuggetion"
+                  style="padding: 5px 10px; left: -30px"
+                >
+                  Align Right
+                </div>
+              </li>
+              <li>
+                <div class="vertical-line" style="padding: 0"></div>
+              </li>
+              <li style="position: relative">
+                <div class="" id="text-color">
+                  <label for="color-picker"
+                    ><span class="material-icons">
+                      format_color_text
+                    </span></label
+                  >
+                  <input
+                    type="color"
+                    name=""
+                    id="color-picker"
+                    style="width: 0px; height: 0px"
+                    class="font-color-prop"
+                    onchange="onChangeTextColor(this)"
+                  />
+                </div>
+                <div
+                  class="hoverSuggetion"
+                  style="padding: 5px 10px; left: -30px"
+                >
+                  Text Color
+                </div>
+              </li>
+              <li style="position: relative">
+                <div class="" id="bgcolor-picker">
+                  <label for="bg-color-picker"
+                    ><span class="material-icons">
+                      format_color_fill
+                    </span></label
+                  >
+                  <input
+                    type="color"
+                    name=""
+                    id="bg-color-picker"
+                    style="width: 0; height: 0"
+                    onchange="onChangeBackgroundColor(this)"
+                  />
+                  
+                </div>
+                <div
+                  class="hoverSuggetion"
+                  style="padding: 5px 10px; left: -50px"
+                >
+                  Background Color
+                </div>
+                
+              </li>
+                <li>
+                  <div class="material-icons" 
+                  id="uploadElement"
+                  style="font-size: 20px">
+                  cloud_upload
+                  </div>
+                  <div
+                    class="hoverSuggetion"
+                    style="padding: 5px 10px; left: -10px"
+                  >
+                    Upload
+                  </div>
+                </li>
+                <li>
+                  <div
+                    class="material-icons"
+                    style="font-size: 20px"
+                    onclick="exportFile(this)"
+                  >
+                    cloud_download
+                  </div>
+                  <div
+                    class="hoverSuggetion"
+                    style="padding: 5px 10px; left: -10px"
+                  >
+                    Download
+                  </div>
+                  </li>
+              <!-- For Search -->
+              <li>
+                <div class="vertical-line" style="padding: 0"></div>
+              </li>
+              </li>
+              <li style=" position: relative; display: flex; background-color: #edf2fa; " id="search" >
+                <div id="functions" class="material-icons functions"onclick="onClickFunctions(this)" style="background: transparent" > search </div>
+                <div contenteditable="true" class="search"  id="searchInput" style="padding-left: 10px " > Find in sheet </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="math-position">
+            <div id="position">Null</div>Formula
+            <div
+              class="vertical-line"
+              style=" padding: 0.5px"
+            ></div>
+            <div id="math" style="align-items: center; max-width: 100vw">
+              
+              <img id="fx-image" src="./Assest/fx.png" alt="" width="20px" style="padding: 10px;"/>
+              <div class="vertical-line" style=" padding: 0.5px" ></div>
+              <div style=" width: 100vw; box-sizing: border-box; padding-left: 10px; padding-right: 10px; outline: none; overflow-y: scroll; max-height: 25px; /* scroll-padding: 100px; */ " contenteditable="true" id="formulas" class="expression" ></div>
             </div>
-            <div class="color-prop">
-                <span class="material-icons">format_color_fill</span>
-                <input type="color" class="BGcolor-prop">
-            </div>
-            <span class="material-icons download">cloud_download</span>
-            <span class="material-icons open">cloud_upload</span>
+          </div>
         </div>
+      </header>
+      <div class="dropdown"></div>
 
-        <!-- for the formula bar-------------------------------- -->
-        <div class="formula-actions-cont">
-            <input type="text" readonly class="address-bar">
-            <img class="formula-icon" src="https://img.icons8.com/ios/50/000000/formula-fx.png" />
-            <input type="text" class="formula-bar" placeholder="f(x)">
-        </div>
+      <!-- footer-->
 
-        <!-- for the sheet -------------------------------------------->
-        <div class="grid-cont">
-            <div class="top-left-dummy-box"></div>
-            <div class="address-col-cont"></div>
-            <!-- Container for cells -->
-            <div class="cells-cont">
-                <!-- Container for row addresses -->
-                <div class="address-row-cont"></div>
-            </div>
-        </div>
+      <div id="footer">
+        <div class="material-symbols-outlined arrow_left">arrow_left</div>
+        <div class="material-symbols-outlined arrow_right">arrow_right</div>
+        <div class="material-icons" id="addSheet">add</div>
+        <div class="sheets" id="sheets"></div>
 
-        <!-- Create a container for sheet actions -->
-        <div class="sheet-actions-cont">
-            <span class="material-symbols-outlined arrow">arrow_left</span>
-            <span class="material-symbols-outlined arrow">arrow_right</span>
-            <div class="sheet-add-icon">
-                <span class="material-icons">post_add</span>
-            </div>
-            <!-- Container for sheet folders -->
-            <div class="sheets-folder-cont">
+      </div>
+    </main>
 
-            </div>
-        </div>
-    </div>
+    <script src="./Js/option.js"></script>
+    <script src="./Js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.4.4/math.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjs/9.5.0/math.js"></script>
 
-    <script src="./Js/grid.js"></script>
-    <script src="./Js/cycleValidation.js"></script>
-    <script src="./Js/sheetsHandling.js"></script>
-    <script src="./Js/cell-properties.js"></script>
-    <script src="./Js/cyclicPathTrace.js"></script>
-    <script src="./Js/formula.js"></script>
-    <script src="./Js/cutCopyPaste.js"></script>
-    <script src="./Js/openSave.js"></script>
-</body>
-
+    
+    <script src="./Js/formulas.js"></script>
+  </body>
 </html>
